@@ -1,13 +1,108 @@
----
-layout: presentation
----
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carmen de la București și Orchestra Universalii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Roboto', sans-serif; color:#333; line-height:1.6; background:#fdfdfd; }
+    a { text-decoration:none; color:inherit; }
 
-{% for post in site.posts reversed %}
-	{% include slide.html %}
-	<div class="page-break"></div>
-{% endfor %}
-{% unless site.simple-slideshow %}
-{% if site.overview %}
-<section id="overview" class="step" {% for attr in site.overview-data %} data-{{attr[0]}}="{{attr[1]}}"{% endfor %}></section>
-{% endif %}
-{% endunless %}
+    header {
+      background: linear-gradient(135deg, #222, #444);
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      position: sticky;
+      top:0;
+      z-index:1000;
+    }
+    header h1 { font-family: 'Playfair Display', serif; font-size:2.5em; margin-bottom:10px; }
+    header p { font-size:1.1em; }
+
+    .hero {
+      width:100%;
+      height:500px;
+      background: #ccc url('images/hero.jpg') center/cover no-repeat;
+      display:flex; justify-content:center; align-items:center;
+      color:#fff; font-size:2em; font-weight:700; text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    section { padding:60px 20px; max-width:1000px; margin:auto; }
+    section h2 { font-family: 'Playfair Display', serif; font-size:2em; color:#222; margin-bottom:30px; position:relative; }
+    section h2::after {
+      content:'';
+      width:60px;
+      height:3px;
+      background:#d4af37;
+      display:block;
+      margin-top:10px;
+      border-radius:2px;
+    }
+
+    .about p { font-size:1.1em; color:#555; }
+
+    .gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    .gallery .item {
+      width:300px; height:200px; background:#eee; display:flex; justify-content:center; align-items:center;
+      border:2px dashed #aaa; border-radius:8px; color:#777; font-weight:500; cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .gallery .item:hover { background:#f7f7f7; border-color:#d4af37; color:#222; }
+
+    form { display:grid; gap:20px; max-width:600px; margin:auto; }
+    input, textarea, button {
+      width:100%; padding:15px; font-size:1em; border:1px solid #ccc; border-radius:5px; font-family: 'Roboto', sans-serif;
+    }
+    button {
+      background: linear-gradient(135deg,#222,#444);
+      color:#fff; font-weight:700; border:none; cursor:pointer; transition:0.3s;
+    }
+    button:hover { background: linear-gradient(135deg,#444,#222); }
+
+    footer {
+      background:#222; color:#fff; text-align:center; padding:30px 20px; margin-top:40px;
+      font-size:0.95em;
+    }
+
+    @media(max-width:768px){
+      .gallery { flex-direction:column; align-items:center; }
+      .hero { height:350px; font-size:1.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Carmen de la București și Orchestra Universalii</h1>
+  <p>WhatsApp: <strong>076 842 2266</strong> | Contact: <strong>073 301 9160</strong> | Email: <strong>stefanzaharia54@gmail.com</strong></p>
+</header>
+
+<div class="hero">
+  Fotografia Ta Elegantă
+</div>
+
+<section class="about">
+  <h2>Despre Noi</h2>
+  <p>
+    Carmen de la București și Orchestra Universalii aduc eleganță și profesionalism fiecărui eveniment. Suntem specializați în nunți, botezuri, aniversări și evenimente corporate, garantând momente memorabile cu muzică live de calitate.
+  </p>
+</section>
+
+<section>
+  <h2>Galerie Multimedia</h2>
+  <div class="gallery">
+    <div class="item">Adaugă videoclipul tău</div>
+    <div class="item">Adaugă fotografia ta</div>
+    <div class="item">Adaugă videoclipul tău</div>
+    <div class="item">Adaugă fotografia ta</div>
+  </div>
+</section>
+
+<section>
+  <h2>Contactează-ne</h2>
+  <form action="mailto:stefanzaharia54@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Numele tău" required>
+    <input t…
